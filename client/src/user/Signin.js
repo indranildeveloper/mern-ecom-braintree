@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
-import { load } from "signal-exit";
+import { Redirect } from "react-router-dom";
 
 import { signin, authenticate, isAuthenticated } from "../auth/helper";
 import Base from "../core/Base";
 
 const Signin = () => {
   const [values, setValues] = useState({
-    email: "indranil@gmail.com",
-    password: "1234567",
+    email: "",
+    password: "",
     error: "",
     loading: false,
     didRedirect: false,
@@ -101,7 +100,7 @@ const Signin = () => {
             </div>
             <button
               onClick={onSubmit}
-              className="btn btn-success btn-block"
+              className="btn btn-primary btn-block"
               type="submit"
             >
               Submit
@@ -118,7 +117,6 @@ const Signin = () => {
       {errorMessage()}
       {signInForm()}
       {performRedirect()}
-      <p className="text-white text-center">{JSON.stringify(values)}</p>
     </Base>
   );
 };

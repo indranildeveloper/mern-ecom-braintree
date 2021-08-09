@@ -86,7 +86,7 @@ const Signup = () => {
             </div>
             <button
               onClick={onSubmit}
-              className="btn btn-success btn-block"
+              className="btn btn-primary btn-block"
               type="submit"
             >
               Submit
@@ -133,7 +133,6 @@ const Signup = () => {
       {successMessage()}
       {errorMessage()}
       {signUpForm()}
-      <p className="text-center text-white">{JSON.stringify(values)}</p>
     </Base>
   );
 };
